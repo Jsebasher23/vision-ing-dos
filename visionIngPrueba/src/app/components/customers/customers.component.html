@@ -1,0 +1,86 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="" #form="ngForm" (submit)="onSubmit(form)" 
+            >
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input name="CustomerName" #CustomerName="ngModel" [(ngModel)]="formData.CustomerName" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label>CustomerLastName</label>
+                    <input name="CustomerLastName" #CustomerLastName="ngModel" [(ngModel)]="formData.CustomerLastName" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label>CustomerTypeIde</label>
+                    <input name="CustomerTypeIde" #CustomerTypeIde="ngModel" [(ngModel)]="formData.CustomerTypeIde" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label>CustomerNumIde</label>
+                    <input name="CustomerNumIde" #CustomerNumIde="ngModel" [(ngModel)]="formData.CustomerNumIde" class="form-control"
+                    type="number">
+
+                </div>
+                <div class="form-group">
+                    <label>CustomerBirthDate</label>
+                    <input name="CustomerBirthDate" #CustomerBirthDate="ngModel" [(ngModel)]="formData.CustomerBirthDate" class="form-control"
+                    type="date" value="CustomerBirthDate" id="example-date-input">
+
+                </div>
+                <div class="form-group">
+                    <label>CustomerAGE</label>
+                    <input name="CustomerAge" #CustomerAge="ngModel" [(ngModel)]="formData.CustomerAge" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label>CustomerEmail</label>
+                    <input name="CustomerEmail" #CustomerEmail="ngModel" [(ngModel)]="formData.CustomerEmail" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tipo Doc</th>
+                            <th scope="col">Numero Doc</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Fecha Nacimiento</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let customer of customers">
+                            <td>{{customer.CustomerTypeIde}}</td>
+                            <td>{{customer.CustomerNumIde}}</td>
+                            <td>{{customer.CustomerName}}</td>
+                            <td>{{customer.CustomerLastName}}</td>
+                            <td>{{customer.CustomerBirthDate}}</td>
+                            <!-- <td>
+                                <button 
+                                    type="button" class="btn btn-light-mr-1" 
+                                    (click)="editCustomer(customer.CustomerID)"                       
+                                    ><i class="fa fa-pencil"></i></button>
+                                <button 
+                                    type="button" class="btn btn-light-mr-1"><i class="fa fa-trash"></i>
+                                </button>                    
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
